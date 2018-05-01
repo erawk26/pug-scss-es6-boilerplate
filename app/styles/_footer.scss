@@ -1,0 +1,36 @@
+footer {
+	.menu {
+		@include set-max-width(700px);
+		@include flex(space-around);
+		li {
+			display: inline-block;
+			margin: 10px 5px;
+		}
+	}
+	.img-wrapper {
+		@include flex;
+	}
+}
+
+.back-to-top {
+	opacity: 0;
+	font-size: 0.75em;
+	position: fixed;
+	cursor: pointer;
+	bottom: 0;
+	right: 0;
+	display: inline-block;
+	padding: 1em;
+	margin: 1em;
+	background: rgba(white, 0.75);
+	border: 1px solid rgba(black, 0.4);
+	transition: all 0.25s linear;
+	border-radius: 4px;
+	z-index: 3;
+	:hover {
+		border-radius: 4px;
+		background: white;
+		border: 1px solid black;
+		cursor: pointer;
+	}
+}

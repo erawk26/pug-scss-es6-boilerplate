@@ -1,0 +1,32 @@
+header {
+	position: fixed;
+	background: white;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	right: 0;
+	nav {
+		&.sticky {
+			margin: 0;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 1000;
+		}
+	}
+	.flex-wrapper{
+		@include flex(space-between);
+		@include set-max-width;
+	}
+}
+
+.main-nav {
+	@include flex();
+	li {
+		display: inline-block;
+		margin: 10px 5px;
+	}
+	&.right{justify-content: flex-end}
+	&.left{justify-content: flex-start}
+}

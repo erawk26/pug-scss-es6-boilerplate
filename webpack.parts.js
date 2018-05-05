@@ -188,30 +188,28 @@ exports.optimizeImages = ({ include, exclude } = {}) => ({
         use: {
 
           loader: 'image-webpack-loader',
-
-          options: {
-            progressive: true,
-
-            // optimizationLevel: 7,
-
-            gifsicle: {
-              interlaced: false
-            },
-
-            /*
-            mozjpeg: {
-
-            },
-
-            svgo: {
-
-            }, */
-
-            pngquant: {
-              quality: '65-90',
-              speed: 4
-            }
-          }
+	        options: {
+		        bypassOnDebug: true,
+		        mozjpeg: {
+			        progressive: true,
+			        quality: 65
+		        },
+		        // optipng.enabled: false will disable optipng
+		        optipng: {
+			        enabled: false,
+		        },
+		        pngquant: {
+			        quality: '65-90',
+			        speed: 4
+		        },
+		        gifsicle: {
+			        interlaced: false,
+		        },
+		        // the webp option will enable WEBP
+		        webp: {
+			        quality: 75
+		        }
+	        }
         }
       }
     ]

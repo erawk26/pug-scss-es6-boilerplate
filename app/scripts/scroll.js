@@ -1,5 +1,5 @@
 require('smoothscroll');
-const ele = document.getElementsByClassName('headshot').item(0);
+const ele = document.getElementById('top');
 const btn = document.getElementById('back-to-top');
 
 function isScrolledIntoView (el) {
@@ -11,4 +11,6 @@ function isScrolledIntoView (el) {
 	return (elemTop >= 0) && (elemBottom <= window.innerHeight);
 }
 
-window.onscroll = () => isScrolledIntoView(ele) ? btn.style.opacity = 0 : btn.style.opacity = 1;
+window.onscroll = function () {
+	return isScrolledIntoView(ele) ? btn.style.opacity = '0' : btn.style.opacity = '1';
+};
